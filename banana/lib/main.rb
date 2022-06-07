@@ -4,9 +4,7 @@
 #       write.
 
 def word_count(beginning, middle, conclusion)
-  beginning.split.size +
-  middle.split.size +
-  conclusion.split.size
+  Pieces.new(beginning, middle, conclusion).split
 end
 
 def letter_count(beginning, middle, conclusion)
@@ -27,6 +25,10 @@ class Pieces
     @beginning = beginning
     @middle = middle
     @conclusion = conclusion
+  end
+
+  def split
+    beginning.split.size + middle.split.size + conclusion.split.size
   end
 
   def sum
