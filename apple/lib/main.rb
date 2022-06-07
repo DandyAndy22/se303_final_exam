@@ -6,8 +6,8 @@ def story
   5.downto(1) do
     add_new_line(middle)
   end
-  conclusion = "And that was it."
-  first() + middle + conclusion
+  conclusion()
+  first() + middle + conclusion()
 end
 
 def first
@@ -16,6 +16,10 @@ end
 
 def middle
   ""
+end
+
+def conclusion
+  "And that was it."
 end
 
 def add_new_line(middle)
