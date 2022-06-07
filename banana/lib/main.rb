@@ -10,11 +10,27 @@ def word_count(beginning, middle, conclusion)
 end
 
 def letter_count(beginning, middle, conclusion)
-  beginning.size + middle.size + conclusion.size
+  Pieces.new(beginning, middle, conclusion).sum
 end
 
 def period_count(beginning, middle, conclusion)
   beginning.scan(/\./).size +
   middle.scan(/\./).size +
   conclusion.scan(/\./).size
+end
+
+class Pieces
+
+  attr_accessor :beginning, :middle, :conclusion
+
+  def initialize(beginning, middle, conclusion)
+    @beginning = beginning
+    @middle = middle
+    @conclusion = conclusion
+  end
+
+  def sum
+    beginning.size + middle.size + conclusion.size
+  end
+
 end
