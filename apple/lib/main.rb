@@ -4,11 +4,9 @@
 def story
   first = "Mr. Dursley was the director of a firm called Grunnings, which made drills."
   middle = ""
-  add_new_line(middle)
-  add_new_line(middle)
-  add_new_line(middle)
-  add_new_line(middle)
-  add_new_line(middle)
+  5.downto(1) do
+    add_new_line(middle)
+  end
   conclusion = "And that was it."
   first + middle + conclusion
 end
