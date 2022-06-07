@@ -12,9 +12,7 @@ def letter_count(beginning, middle, conclusion)
 end
 
 def period_count(beginning, middle, conclusion)
-  beginning.scan(/\./).size +
-  middle.scan(/\./).size +
-  conclusion.scan(/\./).size
+  Pieces.new(beginning, middle, conclusion).scan
 end
 
 class Pieces
@@ -33,6 +31,10 @@ class Pieces
 
   def sum
     beginning.size + middle.size + conclusion.size
+  end
+
+  def scan
+    beginning.scan(/\./).size + middle.scan(/\./).size + conclusion.scan(/\./).size
   end
 
 end
